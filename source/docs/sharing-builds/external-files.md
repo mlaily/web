@@ -13,7 +13,7 @@ When using submodules or NuGet packages for build sharing, it usually involves q
 
 ## Usage
 
-To enable support for external files, the build project file must contain an item group similar to this:
+To enable support for external files, the build project file must contain an item group similar to this. By default, it's already part of the [SDK project template](https://github.com/nuke-build/common/blob/develop/source/Nuke.GlobalTool/templates/_build.sdk.csproj):
 
 ```xml
 <ItemGroup>

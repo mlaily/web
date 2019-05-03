@@ -54,8 +54,7 @@ class Build : NukeBuild
     Target Clean => _ => _
         .Executes(() =>
         {
-            // SourceDirectory.GlobDirectories("*/bin", "*/obj").ForEach(DeleteDirectory);
-            DeleteDirectories(GlobDirectories(SourceDirectory, "*/obj", "*/bin"));
+            SourceDirectory.GlobDirectories("*/obj", "*/bin").ForEach(DeleteDirectory);
             DeleteDirectory(Solution.Directory / "obj");
             EnsureCleanDirectory(ApiDirectory);
             EnsureCleanDirectory(GenerationDirectory);
